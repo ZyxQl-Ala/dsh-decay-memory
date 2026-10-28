@@ -1,0 +1,4 @@
+- insert:
+    - id: decay-memory
+      name: 'dsh-decay-memory'
+      config: {}
