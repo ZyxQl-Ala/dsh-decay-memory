@@ -1,0 +1,42 @@
+{
+  "name": "dsh-decay-memory",
+  "version": "0.3.0",
+  "description": "Decay-based agent memory for DeepSeek Harness: entries gain weight when mentioned, fade and shrink when forgotten (200-day half-life by default), and pinned entries never decay. Ships with a settings panel inside DSH Settings.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "dsh",
+    "memory",
+    "decay",
+    "forgetting-curve",
+    "settings"
+  ],
+  "license": "MIT",
+  "engines": {
+    "dsh": ">=0.2.1-rc.1 <0.3.0-0",
+    "node": ">=20"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": ["@deepseek-ai/dsh-client-ui-settings"],
+      "platform": "web"
+    }
+  }
+}
